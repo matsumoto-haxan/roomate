@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserInfosTable extends Migration
+class CreateReliableUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateUserInfosTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_infos', function (Blueprint $table) {
+        Schema::create('reliable_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nickname');
-            $table->text('introduction');
-            $table->string('portrate_url');
-            $table->string('room_url');
+            $table->integer('user_id');
+            $table->integer('reliable_user_id');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateUserInfosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_infos');
+        Schema::dropIfExists('reliable_users');
     }
 }

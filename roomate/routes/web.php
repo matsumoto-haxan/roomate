@@ -18,3 +18,20 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// ダッシュボードを表示
+Route::get('/dashboard', 'dashboardController@index')->name('dashboard');
+
+// 個人情報編集ページを表示
+
+// 検索ページを表示
+
+// ユーザ詳細ページを表示
+
+// メッセージ一覧ページを表示
+
+// メッセージ詳細ページを表示
+
+//
+
+//
