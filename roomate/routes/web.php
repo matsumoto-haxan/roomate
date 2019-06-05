@@ -42,3 +42,8 @@ Route::get('/messagedetail', 'messagedetailController@index')->name('messagedeta
 //
 
 //
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
