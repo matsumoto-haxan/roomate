@@ -23,14 +23,21 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'dashboardController@index')->name('dashboard');
 
 // 個人情報編集ページを表示
+Route::get('/mypage', 'mypageController@index')->name('mypage');
 
 // 検索ページを表示
+Route::get('/searchlist', 'searchlistController@index')->name('searchlist');
 
+///// TODO: ユーザ詳細ページは同ページ内でもいいかもしれない
 // ユーザ詳細ページを表示
+Route::get('/searchdetail', 'searchdetailController@index')->name('searchdetail');
 
 // メッセージ一覧ページを表示
+Route::get('/messagelist', 'messagelistController@index')->name('messagelist');
 
+///// TODO: メッセージ詳細ページは同ページ内でもいいかもしれない
 // メッセージ詳細ページを表示
+Route::get('/messagedetail', 'messagedetailController@index')->name('messagedetail');
 
 //
 
