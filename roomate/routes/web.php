@@ -21,6 +21,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // ダッシュボードを表示
 Route::get('/dashboard', 'dashboardController@index')->name('dashboard');
+Route::post('/dashboard', 'dashboardController@postTweet')->name('dashboard');
 
 // 個人情報編集ページを表示
 Route::get('/mypage', 'mypageController@index')->name('mypage');
