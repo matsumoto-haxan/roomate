@@ -28,7 +28,7 @@
         <div class="tweet-wrapper">
           @foreach($tweets as $tweet)
           <div>
-            <div>{{ $tweet->content }}</div>
+            <div>{{ $tweet->name }}：{{ $tweet->content }}</div>
           </div>
           @endforeach
         </div>

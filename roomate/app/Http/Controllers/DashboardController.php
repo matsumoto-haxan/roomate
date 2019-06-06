@@ -28,9 +28,13 @@ class DashboardController extends Controller
     // TODO: 非ログインユーザがアクセスしようとしたときにログインページに飛ばす処理はどこに実装するべきか
     // ここに通知情報を取得する処理などを書く
 
-    // とりあえず全ユーザの全ツイート
+    // 自分のツイート
     // TODO:tweetControllerとかに切り出すといいんだと思う
-    $tweets = Tweet::latest()->get();
+    $tweets = Tweet::select()
+    -> join('users', 'users.id', '=', 'tweets.user_id')
+    -> where('user_id', Auth::user()->id)
+    -> get();
+
     return view('dashboard', compact('tweets'));
 
   }
