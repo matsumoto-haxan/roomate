@@ -25,7 +25,11 @@ Route::post('/dashboard', 'dashboardController@postTweet')->name('dashboard');
 
 // 個人情報編集ページを表示
 Route::get('/mypage', 'mypageController@index')->name('mypage');
-Route::post('/mypage', 'mypageController@updateinfo')->name('mypage');
+Route::post('/mypage', 'mypageController@update')->name('mypage');
+
+// 検索条件編集ページ
+Route::get('/useroption', 'userOptionController@index')->name('useroption');
+Route::post('/useroption', 'userOptionController@update')->name('useroption');
 
 // 検索ページを表示
 Route::get('/searchlist', 'searchlistController@index')->name('searchlist');

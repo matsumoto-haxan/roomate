@@ -17,7 +17,7 @@ class CreateUserOptionsTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->integer('want_condition'); //0:not, 1:yes
-            $table->integer('sex'); //0:female, 1:male
+            $table->integer('sex'); //0:init, 1:female, 2:male
             $table->date('birthday');
             $table->integer('job_id');
             $table->integer('lover_condition');//0:nothave, 1:have

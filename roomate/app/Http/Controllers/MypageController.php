@@ -61,7 +61,7 @@ class MypageController extends Controller
   /**
   * プライベート情報を更新する
   */
-  public function updateinfo(Request $request)
+  public function update(Request $request)
   {
     //$validator = $request->validate([
     //  'fullname' => ['required', 'string', 'max:30'],

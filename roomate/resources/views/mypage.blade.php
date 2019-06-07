@@ -38,6 +38,13 @@
         </form>
       </div>
 
+      <div class="card">
+        <div class="card-header">
+          検索条件
+        </div>
+        <p><a href="/useroption">変更する</a></p>
+      </div>
+
     </div>
   </div>
 </div>
