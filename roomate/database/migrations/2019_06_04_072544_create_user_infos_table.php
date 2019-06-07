@@ -15,8 +15,10 @@ class CreateUserInfosTable extends Migration
     {
         Schema::create('user_infos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nickname');
+            $table->integer('user_id');
+            $table->string('fullname');
             $table->text('introduction');
+            $table->string('icon_url');
             $table->string('portrate_url');
             $table->string('room_url');
             $table->timestamps();

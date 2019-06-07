@@ -15,6 +15,7 @@ class CreateUserOptionsTable extends Migration
     {
         Schema::create('user_options', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
             $table->integer('want_condition'); //0:not, 1:yes
             $table->integer('sex'); //0:female, 1:male
             $table->date('birthday');
