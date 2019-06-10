@@ -16,7 +16,10 @@ class CreateWantAreaRecruitsTable extends Migration
         Schema::create('want_area_recruits', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('recruit_id');
-            $table->integer('area_id');
+            $table->string('area_cd');
+            $table->string('pref_cd');
+            $table->string('pref_name');
+            $table->string('city_name');
             $table->timestamps();
         });
     }

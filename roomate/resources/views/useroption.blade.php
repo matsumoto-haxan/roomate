@@ -40,6 +40,14 @@
         </form>
       </div>
 
+      <div>
+        @foreach($areas as $area)
+        <div>
+          <div>{{ $area->area_cd }}：{{ $area->cityname }}</div>
+        </div>
+        @endforeach
+      </div>
+
 
     </div>
   </div>

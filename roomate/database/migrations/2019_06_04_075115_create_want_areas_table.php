@@ -17,6 +17,7 @@ class CreateWantAreasTable extends Migration
             $table->bigIncrements('id');
             $table->integer('user_id');
             $table->string('area_cd');
+            $table->string('pref_cd');
             $table->string('pref_name');
             $table->string('city_name');
             $table->timestamps();

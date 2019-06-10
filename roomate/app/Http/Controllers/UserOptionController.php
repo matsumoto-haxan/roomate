@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\UserOption;
+use App\Area;
+use App\WantArea;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,9 +44,13 @@ class UserOptionController extends Controller
         'roomshare_exp' => '0',
         'sharehouse_exp' => '0'
       ]);
+
+      $areas = Area::orderby('pref_cd','asc')->get();
+      $myareas = WantArea::orderby('pref_cd','asc')->get();
+
     }
 
-    return view('useroption', compact('useropt','useropt'));
+    return view('useroption', compact('useropt','areas','myareas'));
   }
 
 
