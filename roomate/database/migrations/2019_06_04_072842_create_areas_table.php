@@ -17,8 +17,8 @@ class CreateAreasTable extends Migration
             $table->bigIncrements('id');
             $table->string('area_cd');
             $table->string('pref_cd');
-            $table->string('prefname');
-            $table->string('cityname');
+            $table->string('pref_name');
+            $table->string('city_name');
             $table->timestamps();
         });
     }
