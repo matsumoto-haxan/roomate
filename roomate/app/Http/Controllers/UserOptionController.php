@@ -45,12 +45,38 @@ class UserOptionController extends Controller
         'sharehouse_exp' => '0'
       ]);
 
-      $areas = Area::orderby('pref_cd','asc')->get();
-      $myareas = WantArea::orderby('pref_cd','asc')->get();
+      // ユーザが現在登録しているWantAreaを返すサブクエリ
+      $subquerySql =
+        '(select area_cd from want_areas where user_id = ' .
+        Auth::user()->id .
+        ') as want_areas';
+
+      // 埼玉
+      // TODO: 今は過度な最適化は行わない
+      $saitamapref = Area::
+      select(
+        'areas.area_cd as area_cd',
+        'areas.pref_cd as pref_cd',
+        'areas.city_name as city_name',
+        'areas.pref_name as pref_name',
+        'want_areas.area_cd as selectflg'
+        )
+      ->leftjoin(
+        \DB::raw($subquerySql),
+        'want_areas.area_cd',
+        '=',
+        'areas.area_cd')
+      ->where('pref_cd','11')
+      ->orderby('area_cd','asc')
+      ->get();
+
+
+
+
 
     }
 
-    return view('useroption', compact('useropt','areas','myareas'));
+    return view('useroption', compact('useropt','saitamapref'));
   }
 
 
