@@ -111,4 +111,42 @@ class UserOptionController extends Controller
     ]);
     return back();
   }
+
+  /**
+  * 希望エリアをアップデートする
+  * @param  \App\UserOption  $request
+  * @return \Illuminate\Http\Response
+  */
+  public function areaUpdate(Request $request)
+  {
+    // TODO: 今回は、フルデリートフルアップデート方式を採用します
+
+    // 値参照用のAreaマスタを取得
+    $areaMasters = Area::all();
+    $am;
+
+    // そのユーザのAreaを全消し
+    $targetPref = substr($request->area[0], 0, 2);
+    WantArea::where('user_id', Auth::user()->id)
+    ->where('pref_cd', $targetPref)
+    ->delete();
+
+    foreach ($request->area as $value) {
+      foreach ($areaMasters as $am) {
+        if($value == $am->area_cd){
+          WantArea::Create([
+            'user_id' => Auth::user()->id,
+            'area_cd' => $am->area_cd,
+            'pref_cd' => $am->pref_cd,
+            'pref_name' => $am->pref_name,
+            'city_name' => $am->city_name
+          ]);
+        }
+      }
+    }
+    return back();
+  }
+
+
+
 }

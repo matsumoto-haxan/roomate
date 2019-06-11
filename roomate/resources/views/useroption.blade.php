@@ -36,22 +36,37 @@
             <li>roomshare_exp<input type="text" name="roomshare_exp" value="{{$useropt->roomshare_exp}}" placeholder=""></li>
             <li>sharehouse_exp<input type="text" name="sharehouse_exp" value="{{$useropt->sharehouse_exp}}" placeholder=""></li>
             <li><button type="submit">更新する</button>
-          </ul>
-        </form>
-      </div>
-
-      <div>
-        @foreach($saitamapref as $saitamaarea)
-        <div>
-          <div>{{ $saitamaarea->area_cd }}：{{ $saitamaarea->city_name }}：{{ $saitamaarea->selectflg }}</div>
+            </ul>
+          </form>
         </div>
-        @endforeach
+
+        <div class="card">
+          <div class="card-header">
+            住みたいエリア
+          </div>
+          <div>
+            <form action="/areaUpdate" method="post">
+              {{ csrf_field() }}
+              <div>
+                @foreach($saitamapref as $area)
+
+                @if($loop->first)
+                <div>
+                  {{ $area->pref_name }}
+                </div>
+                @else
+                <div>
+                  <input type="checkbox" name="area[]" value="{{ $area->area_cd }}" @if($area->selectflg != "" )checked="checked"@endif>
+                  {{ $area->city_name }}
+                </div>
+                @endif
+
+                @endforeach
+              </div>
+              <button type="submit">更新する</button>
+            </form>
+          </div>
+        </div>
       </div>
-
-
-
     </div>
-  </div>
-</div>
-</div>
-@endsection
+    @endsection

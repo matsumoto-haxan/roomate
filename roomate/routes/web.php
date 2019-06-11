@@ -30,6 +30,9 @@ Route::post('/mypage', 'mypageController@update')->name('mypage');
 // 検索条件編集ページ
 Route::get('/useroption', 'userOptionController@index')->name('useroption');
 Route::post('/useroption', 'userOptionController@update')->name('useroption');
+Route::post('/areaUpdate', 'userOptionController@areaUpdate')->name('useroption');
+
+
 
 // 検索ページを表示
 Route::get('/searchlist', 'searchlistController@index')->name('searchlist');

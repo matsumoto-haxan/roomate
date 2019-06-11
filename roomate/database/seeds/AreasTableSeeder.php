@@ -13,6 +13,7 @@ class AreasTableSeeder extends Seeder
   */
   public function run()
   {
+    Area::create(['area_cd' => '110001','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '',]);
     Area::create(['area_cd' => '111007','pref_cd' => '11','pref_name' => '埼玉県','city_name' => 'さいたま市',]);
     Area::create(['area_cd' => '112011','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '川越市',]);
     Area::create(['area_cd' => '112020','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '熊谷市',]);
@@ -76,6 +77,8 @@ class AreasTableSeeder extends Seeder
     Area::create(['area_cd' => '114421','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '宮代町',]);
     Area::create(['area_cd' => '114642','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '杉戸町',]);
     Area::create(['area_cd' => '114651','pref_cd' => '11','pref_name' => '埼玉県','city_name' => '松伏町',]);
+
+    Area::create(['area_cd' => '120006','pref_cd' => '12','pref_name' => '千葉県','city_name' => '',]);
     Area::create(['area_cd' => '121002','pref_cd' => '12','pref_name' => '千葉県','city_name' => '千葉市',]);
     Area::create(['area_cd' => '122025','pref_cd' => '12','pref_name' => '千葉県','city_name' => '銚子市',]);
     Area::create(['area_cd' => '122033','pref_cd' => '12','pref_name' => '千葉県','city_name' => '市川市',]);
@@ -130,6 +133,8 @@ class AreasTableSeeder extends Seeder
     Area::create(['area_cd' => '124419','pref_cd' => '12','pref_name' => '千葉県','city_name' => '大多喜町',]);
     Area::create(['area_cd' => '124435','pref_cd' => '12','pref_name' => '千葉県','city_name' => '御宿町',]);
     Area::create(['area_cd' => '124630','pref_cd' => '12','pref_name' => '千葉県','city_name' => '鋸南町',]);
+
+    Area::create(['area_cd' => '130001','pref_cd' => '13','pref_name' => '東京都','city_name' => '',]);
     Area::create(['area_cd' => '131016','pref_cd' => '13','pref_name' => '東京都','city_name' => '千代田区',]);
     Area::create(['area_cd' => '131024','pref_cd' => '13','pref_name' => '東京都','city_name' => '中央区',]);
     Area::create(['area_cd' => '131032','pref_cd' => '13','pref_name' => '東京都','city_name' => '港区',]);
@@ -192,6 +197,8 @@ class AreasTableSeeder extends Seeder
     Area::create(['area_cd' => '134015','pref_cd' => '13','pref_name' => '東京都','city_name' => '八丈町',]);
     Area::create(['area_cd' => '134023','pref_cd' => '13','pref_name' => '東京都','city_name' => '青ヶ島村',]);
     Area::create(['area_cd' => '134210','pref_cd' => '13','pref_name' => '東京都','city_name' => '小笠原村',]);
+
+    Area::create(['area_cd' => '140007','pref_cd' => '14','pref_name' => '神奈川県','city_name' => '',]);
     Area::create(['area_cd' => '141003','pref_cd' => '14','pref_name' => '神奈川県','city_name' => '横浜市',]);
     Area::create(['area_cd' => '141305','pref_cd' => '14','pref_name' => '神奈川県','city_name' => '川崎市',]);
     Area::create(['area_cd' => '141500','pref_cd' => '14','pref_name' => '神奈川県','city_name' => '相模原市',]);
